@@ -1,0 +1,87 @@
+.mathlab {
+  border: 1px solid var(--line, #d9dbd4);
+  border-radius: 4px;
+  background: var(--surface, #fff);
+  color: var(--ink, #252725);
+}
+
+.mathlab__head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 6px 16px;
+  padding: 11px 14px;
+}
+
+.mathlab__name { font-size: .875rem; font-weight: 650; }
+.mathlab__legend { display: flex; flex-wrap: wrap; gap: 4px 14px; }
+.mathlab__tag {
+  display: flex;
+  align-items: baseline;
+  gap: 6px;
+  font-size: .8125rem;
+  font-variant-numeric: tabular-nums;
+  overflow-wrap: anywhere;
+}
+.mathlab__legend[data-lines] .mathlab__tag::before {
+  content: "";
+  flex: 0 0 14px;
+  align-self: center;
+  border-top: 2px solid #315d78;
+}
+.mathlab__legend[data-lines] .mathlab__tag + .mathlab__tag::before {
+  border-top-style: dashed;
+  border-color: #466a52;
+}
+.mathlab__plot {
+  display: block;
+  width: 100%;
+  height: clamp(190px, 36vw, 300px);
+  background: #fafaf7;
+  border-block: 1px solid var(--line, #d9dbd4);
+}
+.mathlab__controls {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(124px, 100%), 1fr));
+  gap: 8px 16px;
+  padding: 10px 14px;
+}
+.mathlab__control {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: baseline;
+  gap: 1px 8px;
+  font-size: .8125rem;
+}
+.mathlab__control output { font-weight: 650; font-variant-numeric: tabular-nums; }
+.mathlab__control input {
+  grid-column: 1 / -1;
+  width: 100%;
+  min-width: 0;
+  min-height: 24px;
+  margin: 0;
+  accent-color: var(--primary, #366349);
+}
+.mathlab__control input:focus-visible {
+  outline: 2px solid var(--focus, #315d78);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+.mathlab__result {
+  margin: 0;
+  padding: 9px 14px;
+  border-top: 1px solid var(--line, #d9dbd4);
+  background: var(--soft, #f3f3ef);
+  color: var(--ink, #252725);
+  font-size: .8125rem;
+  line-height: 1.5;
+  font-variant-numeric: tabular-nums;
+}
+.graph-parameters { border:0; margin:0; }
+.graph-parameters .graph-number { grid-column:auto; max-width:100px; min-height:38px; text-align:right; padding:5px 8px; }
+.graph-parameters .mathlab__control { grid-template-columns:minmax(0,1fr) minmax(55px,85px); }
+.graph-exercise .mathlab__plot { height:clamp(250px,45vw,380px); touch-action:none; }
+.graph-actions { padding:0 14px 10px; }
+.mathlab__alternative { padding:10px 14px; overflow-x:auto; }
+.mathlab__alternative summary { cursor:pointer; margin-bottom:8px; }
